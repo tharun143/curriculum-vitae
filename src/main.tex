@@ -1,0 +1,288 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Curriculum Vitae
+%
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to HowToTeX.com.
+% Date: July 2011
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+							
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{Black}{%
+			\parbox{6em}{%
+			\hfill\color{White}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+\includegraphics[width=0.2\textwidth]{FileUploadServlet.jpg}
+
+\MyName{Tharun Ravuri}
+\MySlogan{Curriculum Vitae}
+
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Personal details}{}
+
+\PersonalEntry{Birth}{August 07, 2000}
+\PersonalEntry{Address}{DoorNo: 12-9-11/21A, Prakash Nagar, Narasaraopet, District Guntur}
+\PersonalEntry{Phone}{9182467224}
+\PersonalEntry{Mail}{\url{tharunravuri2000@gmail.com}}
+\PersonalEntry{Religion}{Hindu}
+\PersonalEntry{Nationality}{Indian}
+\PersonalEntry{Domicile}{Narasaraopet(Andhra Pradesh)}
+
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+
+\EducationEntry{Bachelors in Computer Science}{2017-2021}{Amrita-Vishwa Vidyapeetham | Amritapuri | Kerala | India}
+{Cum.GPA : 8.95/10.00}
+{Major.GPA : 8.95/10.00}
+
+\EducationEntry{Intermediate Examination
+}{2015-2017}
+{NARAYANA college | Kankipadu | Vijayawada | Andhra Pradesh}
+{Score : 973/1000}
+{Percentage : 97.3\%}
+
+
+\EducationEntry{Matriculation}{2014-2015}{Sindhu High School | Narasaraopet | Andhra Pradesh}
+{Cum.GPA : 9.8/10.00}
+
+\newpage
+%%% Links
+%%% ------------------------------------------------------------
+\NewPart{Links}{}
+\SkillsEntry{Gmail}{tharunravuri2000@gmail.com}
+\SkillsEntry{Github}{https://github.com/tharun143}
+\SkillsEntry{Blog}{https://tharunravuri.wordpress.com/}
+\SkillsEntry{Codecademy}{https://www.codecademy.com/ravurirebels}
+\SkillsEntry{Hackerrank}{https://www.hackerrank.com/tharunravuri2000}
+\SkillsEntry{CodeChef}{https://www.codechef.com/users/tharun2468}
+\SkillsEntry{LinkedIn}{https://www.linkedin.com/in/tharun-ravuri-882481167/}
+\SkillsEntry{Twitter}{https://twitter.com/TharunRavuri}
+\SkillsEntry{Quora}{https://www.quora.com/profile/Tharun-Ravuri}
+\SkillsEntry{Website}{https://ravurirebels.wixsite.com/minsida}
+
+%%% CourseWork
+%%% ------------------------------------------------------------
+\NewPart{CourseWork}{}
+\SkillsEntry{GRADUATE}{}
+\SkillsEntry{}{- Computational Thinking and Problem Solving}
+\SkillsEntry{}{- Computer Programming}
+\SkillsEntry{}{- Computer Science Essentials}
+\SkillsEntry{}{- Fundamentals of Electrical and Electronics Engineering}
+\SkillsEntry{}{- Data Structures and Algorithms}
+\SkillsEntry{}{- Object Oriented Programming}
+\SkillsEntry{}{- Digital Circuits and Systems}
+\SkillsEntry{}{- Design and Analysis of Algorithms}
+\SkillsEntry{}{- Introduction to Embedded Systems}
+\SkillsEntry{}{- Operating Systems}
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Skills}{}
+
+\SkillsEntry{Programming Languages}{}
+\SkillsEntry{}{- Python}
+\SkillsEntry{}{- C} 
+\SkillsEntry{}{- C++}
+\SkillsEntry{}{- Java}
+\SkillsEntry{}{- Bash}
+\SkillsEntry{}{- Shell}
+\SkillsEntry{}{- HTML}
+\SkillsEntry{}{- LATEX}
+
+\SkillsEntry{Languages Spoken}{}
+\SkillsEntry{}{- Telugu}
+\SkillsEntry{}{- Hindi}
+\SkillsEntry{}{- English}
+\SkillsEntry{}{- German}
+
+\SkillsEntry{Additional software}{}
+\SkillsEntry{}{- MS word}
+\SkillsEntry{}{- MS power point}
+\SkillsEntry{}{- MS Excel}
+\SkillsEntry{}{- Unity}
+\SkillsEntry{}{- Blender}
+
+\newpage
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Work experience}{}
+{Open Source Contribution}
+\newline
+\newline
+\SkillsEntry{}{- Participated in NWOC 2018}
+\SkillsEntry{}{- Participated in KWOC 2018}
+\SkillsEntry{}{- Participated in 24 Pull Requests 2018}
+\SkillsEntry{}{- Participated in HacktoberFest 2018}
+
+{Internet Of Things}
+\newline
+\newline
+\SkillsEntry{}{- Working on Monitoring of soil fertility project }
+\SkillsEntry{}{- Working on Speak to your Arduino using Google voice assistant}
+%%% Open Source Club
+%%% ------------------------------------------------------------
+\NewPart{OPEN SOURCE CLUB}{}
+{Member | amFOSS | Amrita University | Amritapuri}
+\newline
+\newline
+\SkillsEntry{Technical}{}
+\SkillsEntry{}{- Open Source Contributor - Contributing to Drupal}
+\SkillsEntry{}{- Member in IoT team - Working on Soil Fertility project }
+
+\SkillsEntry{Non-Technical}{}
+\SkillsEntry{}{- Member in Content Writing Team - Wrote a wiki page on amFOSS}
+\SkillsEntry{}{- Member in Magazine Team}
+
+%%% Courses
+%%% ------------------------------------------------------------
+\NewPart{Technical Courses}{}
+\SkillsEntry{Codecademy}{}
+\SkillsEntry{}{- Command Line}
+\SkillsEntry{}{- Python 2}
+\SkillsEntry{}{- Java}
+
+\SkillsEntry{edx}{}
+\SkillsEntry{}{- Introduction to the Internet Of Things(Audit)}
+\SkillsEntry{}{- IoT Sensors and Devices(Audit)}
+\SkillsEntry{}{- Embedded Systems-Shape The World: Microcontroller Input/Output(Audit)}
+\SkillsEntry{}{- Algorithms and Data Structures(Audit)}
+
+%%% Tools
+%%% ------------------------------------------------------------
+\NewPart{Tools}{}
+\SkillsEntry{}{- Git}
+\SkillsEntry{}{- Github}
+\SkillsEntry{}{- Arduino}
+
+\newpage
+
+%%% Non-Technical
+%%% ------------------------------------------------------------
+\NewPart{Non-Technical}{}
+\SkillsEntry{}{- Western Dancer}
+\SkillsEntry{}{- Badminton Player}
+\SkillsEntry{}{- Artist}
+\SkillsEntry{}{- Photographer}
+\SkillsEntry{}{- Youtuber}
+\SkillsEntry{}{- Blogger}
+
+\NewPart{Also Experienced with}{}
+\SkillsEntry{}{- Craftwork with wax,mud and leaves}
+\SkillsEntry{}{- Painting}
+\SkillsEntry{}{- Chess and Board games}
+\SkillsEntry{}{- Yoga and Meditation}
+\SkillsEntry{}{- Recorder music}
+\SkillsEntry{}{- karate.}
+
+%%% Achievements
+%%% ------------------------------------------------------------
+\NewPart{Hackathons}{}
+\SkillsEntry{}{- Attended to Major Leauge Hack Day}
+\SkillsEntry{}{- Attended to Hacko 1.0 Hackathon}
+
+
+%%% Awards
+%%% ------------------------------------------------------------
+\NewPart{Awards and Certificates}{}
+\SkillsEntry{}{- secured many trophies and prizes in academics in my childhood.}
+\SkillsEntry{}{- secured a prize in the drawing contest in my childhood.}
+\SkillsEntry{}{- secured a prize in the debate contest in my childhood.}
+\SkillsEntry{}{- Secured Certificate of appreciation for the Sabarimala-Pampa Swach Bharat Clean up drive 2017.}
+\SkillsEntry{}{- Secured Certificate of appreciation for the self-less service on the occasion of the 64th birthday celebrations of Sri Mata Amritanandamaya Devi 2017}
+\SkillsEntry{}{- Secured the certificate of achievement for successfully completed the course titled C-language 2017. }
+\SkillsEntry{}{- Secured the certificate of completion for completing the 2 day workshop on "Virtual Reality" Organized by StudyOwl 2018.}
+\SkillsEntry{}{- secured the certificate of appreciation for the participation in the Amala Bharatam Clean-Up Drive conducted on the occasion of the 72nd Independence Day 2018. }
+\SkillsEntry{}{- Secured the certificate of achievement for successfully completed the course titled C++ language 2018.}
+\SkillsEntry{}{- secured the certificate of achievement in recognition of their accomplishment and participation in Major Leauge Hackings 2018 Local Hack Day.}
+
+\end{document}
